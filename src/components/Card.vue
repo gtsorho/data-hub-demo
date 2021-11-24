@@ -80,7 +80,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 .card .card_image img {
   width: inherit;
   height: inherit;
-  border-radius: 40px;
+  border-radius: 20px;
   object-fit: cover;
 }
 
@@ -95,7 +95,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 }
 
 .card:hover {
-  transform: scale(1.05, 1.05);
+  transform: scale(1.0, 1.0);
   box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
     -5px -5px 30px 15px rgba(0,0,0,0.22);
 }
