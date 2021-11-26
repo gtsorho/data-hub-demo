@@ -2,37 +2,54 @@
     <div class="container py-5 mb-5 d-flex ">
         <h1>Data</h1><h1 class="text-success">Hub</h1>
     </div>
-    <ol class="list-group list-group-numbered">
-        <li class="list-group-item d-flex justify-content-between bg-dark text-light align-items-center py-5">
+    <ul class="list-group align-text-center ">
+        <li class="hover list-group-item d-flex justify-content-between bg-dark text-light align-items-center py-5"
+        >
         <div class="ms-2 me-auto">
-            <div class="fw-bold">Subheading</div>
-            Content for list item
+            <span></span>
+            <div class="fw-bold ms-4">OverView</div>
         </div>
-        <span class="badge bg-primary rounded-pill">14</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between bg-dark text-light align-items-center py-5">
+        <li class="hover list-group-item d-flex justify-content-between bg-dark text-light align-items-center py-5"
+        >
         <div class="ms-2 me-auto">
-            <div class="fw-bold">Subheading</div>
-            Content for list item
+            <span></span>
+            <div class="fw-bold ms-4">Regional</div>
         </div>
-        <span class="badge bg-primary rounded-pill">14</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between bg-dark text-light align-items-center py-5">
+        <li class="hover list-group-item d-flex justify-content-between bg-dark text-light align-items-center py-5"
+        >
         <div class="ms-2 me-auto">
-            <div class="fw-bold">Subheading</div>
-            Content for list item
+            <span></span>
+            <div class="fw-bold ms-4">Districts</div>
         </div>
-        <span class="badge bg-primary rounded-pill">14</span>
         </li>
-    </ol>
+    </ul>
 </template>
 
 <script>
 export default {
-    name: "leftpane"
+    name: "leftpane",
+    data() {
+        return {
+            hover: false,
+            
+        }
+    },
+    methods: {
+      
+    },
 }
+
 </script>
 
 <style scoped>
 
+.hover:hover{
+    border-color: antiquewhite;
+    border-top-width: 0px !important;
+    border-right: 0px !important;
+    border-bottom: 0px !important;
+    border-left-width: 15px;
+}
 </style>

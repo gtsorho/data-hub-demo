@@ -1,54 +1,47 @@
 <template>
-<div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
         <div class="col cards-list">
-            <div class="card 4">
-                <div class="card_image">
-                    <!-- <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" /> -->
+            <div class="card">
+              <div class="card-body my-2">
+                <h4 class="card-title ">{{weather.name}}</h4>
+                <div class="row mt-4">
+                  <div class="col">
+                    <img :src="tempImg">
+                    <p class="fw-bolder font-monospace text-muted ps-1">{{weather.main.temp}}</p>
+                  </div>
+                  <div class="col">
+                    <img :src="humidityImg">
+                    <p class="fw-bolder font-monospace text-muted ps-1">{{weather.main.humidity}}</p>
+                  </div>
+                  <div class="col">
+                    <img :src="pressureImg">
+                    <p class="fw-bolder font-monospace text-muted ps-1">{{weather.main.pressure}}</p>
+                  </div>
+                  <div class="col">
+                    <img :src="windImg">
+                    <p class="fw-bolder font-monospace text-muted ps-1">{{weather.wind.speed}}</p>
+                  </div>
                 </div>
-                <div class="card_title title-black">
-                    <!-- <p>Card Title</p> -->
-                </div>
+              </div>
             </div>
-        </div>
-        <div class="col cards-list">
-            <div class="card 4">
-                <div class="card_image">
-                    <!-- <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" /> -->
-                </div>
-                <div class="card_title title-black">
-                    <!-- <p>Card Title</p> -->
-                </div>
-            </div>
-        </div>
-        <div class="col cards-list">
-            <div class="card 4">
-                <div class="card_image">
-                    <!-- <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" /> -->
-                </div>
-                <div class="card_title title-black">
-                    <!-- <p>Card Title</p> -->
-                </div>
-            </div>
-        </div>
-        <div class="col cards-list">
-            <div class="card 4">
-                <div class="card_image">
-                    <!-- <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" /> -->
-                </div>
-                <div class="card_title title-black">
-                    <!-- <p>Card Title</p> -->
-                </div>
-            </div>
-        </div>
-        
-    </div>
-</div>
+        </div>        
 </template>
 
 <script>
+
 export default {
-    name: "Card"
+    name: "Card",
+    data() {
+      return {
+        tempImg: require('../assets/thermometer.png'),
+        humidityImg: require('../assets/humidity.png'),
+        pressureImg: require('../assets/pressure-gauge.png'),
+        windImg: require('../assets/wind-socket.png')
+      }
+    },
+    props: {
+      weather: Object
+    }
+    
 }
 </script>
 
@@ -61,12 +54,23 @@ export default {
   flex-wrap: wrap;
 }
 
+.col img{
+  width: 30px;
+}
+.col p{
+  margin-top: 15px;
+}
+.card-body{
+  padding-bottom: 2px;
+    padding-top: 2px;
+}
 .card {
+  color: black;
   margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  width: 500px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 1px 5px 5px rgb(0 0 0 / 6%), -2px 2px 21px 0px rgb(0 0 0 / 16%);
   cursor: pointer;
   transition: 0.4s;
 }
@@ -84,28 +88,10 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   object-fit: cover;
 }
 
-.card .card_title {
-  text-align: center;
-  border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-  margin-top: -80px;
-  height: 40px;
-}
 
 .card:hover {
-  transform: scale(1.0, 1.0);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-    -5px -5px 30px 15px rgba(0,0,0,0.22);
-}
-
-.title-white {
-  color: white;
-}
-
-.title-black {
-  color: black;
+  transform: scale(1.03, 1.03);
+  box-shadow: 0px 0px 8px 6px rgb(0 0 0 / 20%), -5px -5px 15px -7px rgb(0 0 0 / 17%);
 }
 
 @media all and (max-width: 500px) {
