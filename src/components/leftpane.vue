@@ -44,7 +44,10 @@ export default {
 </script>
 
 <style scoped>
-
+h1{
+    font-size-adjust: 60%;
+    font-family: ui-rounded
+}
 .hover:hover{
     border-color: antiquewhite;
     border-top-width: 0px !important;
