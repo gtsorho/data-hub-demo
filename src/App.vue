@@ -46,7 +46,7 @@ export default {
   
   created() {
     axios
-    .get('http://api.openweathermap.org/data/2.5/box/city',{
+    .get('https://api.openweathermap.org/data/2.5/box/city',{
       params : {
         bbox: '-2.731130,4.856721,0.501007,10.926089,11',
         appid: 'b9564e9e1381bcf8925e4cfc654c44f1'
